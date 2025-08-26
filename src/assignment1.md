@@ -132,8 +132,9 @@ Suggest a **better data structure** for storing transactions when **recent entri
 
 ANSWER:
 In order to get the "most recent transactions," using Linked List forces you to traverse through the entire list before
-being able to reach the most recent added. This is because you have to start at "head," making it extremely
-inefficient to obtain and correct the most recent transaction. A better data structure to use would be a stack. This is 
+being able to reach the most recent added. This is because you have to start at "head," and having to use .next one by one
+until "null" (if not found) or till the entry being looked for. As a result, making linked list an extremely inefficient
+collection to use when trying to obtain and correct the most recent transaction. A better data structure to use would be a stack. This is 
 because stacks follow a LIFO structure. Therefore, the store can always access the most recent entry as it will always
 be at the top of the stack. As a result, the store can easily modify and access if they need to do anything with the most
 recent entries.
