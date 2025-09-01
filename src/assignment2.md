@@ -56,7 +56,12 @@ public class TextEditor {
      * @return the undone word, or null if no action to undo
      */
     public String undoLastAction() {
-        
+        while(!redoStack.isEmpty()){
+            redoStack.pop();
+        }
+        String undone = actionStack.pop()
+        redoStack.push(undone);
+        return undone;
     }
 
     /**
@@ -64,7 +69,12 @@ public class TextEditor {
      * @return the word restored, or null if redo not possible
      */
     public String redoLastUndo() {
-        
+        if (redoStack.isEmpty()) {
+            return null;
+        }
+        String redoWord = redoStack.pop();
+        actionStack.push(redoWord);
+        return redoWord;
     }
 }
 ```
